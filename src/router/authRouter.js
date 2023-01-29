@@ -12,7 +12,7 @@ router.route('/login/email').post(
   ],
   checkValidation,
   passport.authenticate('local'),
-  AsyncErrorHandler((req, res) => {
+  AsyncErrorHandler((req, res, next) => {
     res.json({ email: req.user.email, name: req.user.name })
   })
 )

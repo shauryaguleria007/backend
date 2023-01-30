@@ -37,7 +37,7 @@ exports.app = (server) => {
         autoRemove: 'interval',
         autoRemoveInterval: 1,
       }),
-      cookie: { maxAge: 60 * 60 * 1000 }, // 1 hour
+      cookie: { maxAge: 60 * 60 * 1000, httpOnly: false, secure: true }, // 1 hour
     })
   )
   // server.use(morgan('dev'))

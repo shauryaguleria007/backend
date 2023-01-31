@@ -17,10 +17,12 @@ const MongoStore = require('connect-mongo')
 exports.app = (server) => {
   server.use(
     cors({
-      origin: process.env.client,
+      origin: [`${process.env.client}`, 'http://localhost:5173'],
       credentials: true,
+      methods: ['GET', 'PUT', 'POST', 'OPTIONS'],
     })
   )
+
   LocalStrategy(passport)
   passportGoogleStrategy(passport)
   passportValidateSession(passport)
@@ -37,7 +39,12 @@ exports.app = (server) => {
         autoRemove: 'interval',
         autoRemoveInterval: 1,
       }),
-      cookie: { maxAge: 60 * 60 * 1000, httpOnly: false, secure: true }, // 1 hour
+      cookie: {
+        maxAge: 60 * 60 * 1000,
+        httpOnly: false,
+        sameSite: 'none',
+        secure: true,
+      }, // 1 hour
     })
   )
   // server.use(morgan('dev'))
@@ -45,7 +52,6 @@ exports.app = (server) => {
   server.use(passport.initialize())
   server.use(passport.session())
   server.use(express.json())
-
   server.use(AppRouter)
   server.use(ErrorHandler)
 }

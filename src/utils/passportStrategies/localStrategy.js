@@ -13,7 +13,6 @@ module.exports = (passport) => {
 
       return result(null, false, { message: 'incorrect password' })
     }
-    console.log('done')
     return result(null, user, { message: 'here' })
   }
   passport.use(new LocalStrategy({ usernameField: 'email' }, authenticateUser))

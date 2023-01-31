@@ -17,8 +17,7 @@ module.exports = (passport) => {
       {
         clientID: process.env.CID,
         clientSecret: process.env.CSEC,
-        callbackURL:
-          'https://react-login-fd4e.onrender.com/api/v1/auth/oauth2/redirect/google',
+        callbackURL: '/api/v1/auth/oauth2/redirect/google',
         scope: ['profile', 'email'],
       },
       authenticateUser

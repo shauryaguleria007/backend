@@ -33,6 +33,4 @@ const initializeServer = async () => {
 
 initializeServer()
 
-server.listen(process.env.PORT, () => {
-  console.log('server started')
-})
+module.exports = server

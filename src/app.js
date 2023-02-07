@@ -31,6 +31,7 @@ exports.app = (server) => {
     session({
       secret: process.env.SSEC,
       resave: false,
+      proxy: true,
       saveUninitialized: false,
       store: MongoStore.create({
         client: mongoose.connection.getClient(),
@@ -42,9 +43,9 @@ exports.app = (server) => {
       cookie: {
         path: '/',
         maxAge: 60 * 60 * 1000,
-        httpOnly: true,
+        httpOnly: false,
         path: '/',
-        sameSite: 'none',
+        // sameSite: 'none',
         // secure: true,
         Domain: 'https://shauryaguleria.in',
       }, // 1 hour

@@ -43,6 +43,7 @@ exports.app = (server) => {
         path: '/',
         maxAge: 60 * 60 * 1000,
         httpOnly: false,
+        path: '/',
         // sameSite: 'none',
         // secure: true,
         // Domain: 'https://shauryaguleria.in',

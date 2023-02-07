@@ -17,7 +17,7 @@ const MongoStore = require('connect-mongo')
 exports.app = (server) => {
   server.use(
     cors({
-      origin: [`${process.env.client}`, 'http://localhost:5173'],
+      origin: `${process.env.client}`,
       credentials: true,
       methods: ['GET', 'PUT', 'POST', 'OPTIONS'],
     })

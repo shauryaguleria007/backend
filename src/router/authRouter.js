@@ -13,6 +13,7 @@ router.route('/login/email').post(
   checkValidation,
   passport.authenticate('local'),
   AsyncErrorHandler((req, res, next) => {
+    console.log(req.headers)
     res.json({ email: req.user.email, name: req.user.name })
   })
 )

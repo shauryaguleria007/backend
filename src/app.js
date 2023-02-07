@@ -41,9 +41,9 @@ exports.app = (server) => {
       }),
       cookie: {
         maxAge: 60 * 60 * 1000,
-        httpOnly: false,
-        sameSite: 'none',
-        secure: true,
+        // httpOnly: false,
+        // sameSite: 'none',
+        // secure: true,
       }, // 1 hour
     })
   )

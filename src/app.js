@@ -41,12 +41,12 @@ exports.app = (server) => {
         autoRemoveInterval: 1,
       }),
       cookie: {
-        path: '/',
+        // path: '/',
         maxAge: 60 * 60 * 1000,
         httpOnly: true,
         sameSite: 'none',
         secure: true,
-        Domain: 'https://shauryaguleria.in',
+        // Domain: 'https://shauryaguleria.in',
       }, // 1 hour
     })
   )

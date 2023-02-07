@@ -52,6 +52,10 @@ exports.app = (server) => {
   server.use(passport.initialize())
   server.use(passport.session())
   server.use(express.json())
+  server.use((req, res, next) => {
+    console.log(req.headers)
+    return next()
+  })
   server.use(AppRouter)
   server.use(ErrorHandler)
 }

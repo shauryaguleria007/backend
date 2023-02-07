@@ -3,7 +3,6 @@ const { User } = require('../modal')
 module.exports.createUser = AsyncErrorHandler(async (req, res, next) => {
   const { email, password, name } = req.body
   const user = await User.create({ email, password, name })
-  console.log(user)
   res.json({ email: user.email, name: user.name })
 })
 

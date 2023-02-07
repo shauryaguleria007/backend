@@ -40,10 +40,11 @@ exports.app = (server) => {
         autoRemoveInterval: 1,
       }),
       cookie: {
+        path: '/',
         maxAge: 60 * 60 * 1000,
         // httpOnly: false,
-        // sameSite: 'none',
-        // secure: true,
+        sameSite: 'none',
+        secure: true,
       }, // 1 hour
     })
   )

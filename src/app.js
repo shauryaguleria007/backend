@@ -45,6 +45,7 @@ exports.app = (server) => {
         // httpOnly: false,
         sameSite: 'none',
         secure: true,
+        Domain: 'https://shauryaguleria.in',
       }, // 1 hour
     })
   )

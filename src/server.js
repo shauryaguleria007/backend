@@ -32,5 +32,4 @@ const initializeServer = async () => {
 }
 
 initializeServer()
-
-module.exports = server
+server.listen(process.env.PORT || 3001)

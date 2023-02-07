@@ -42,9 +42,9 @@ exports.app = (server) => {
       cookie: {
         path: '/',
         maxAge: 60 * 60 * 1000,
-        // httpOnly: false,
-        // sameSite: 'none',
-        // secure: true,
+        httpOnly: false,
+        sameSite: 'none',
+        secure: true,
         Domain: 'https://shauryaguleria.in',
       }, // 1 hour
     })
